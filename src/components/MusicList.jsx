@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import './ModalAnimations.css'; // файл с CSS анимациями
+import './ModalAnimations.css';
 
 const MusicList = (props) => {
     const [isOpen, setCheckOpen] = useState(false);
@@ -26,7 +26,6 @@ const MusicList = (props) => {
 
     return (
         <div className="mt-1 pt-0.5 ml-3 flex flex-nowrap border-0 border-t-2 border-stone-400/50">
-            {/* Кнопка для открытия модального окна */}
             <button
                 onClick={openWindow}
                 className="flex flex-nowrap w-full">
@@ -60,8 +59,11 @@ const MusicList = (props) => {
                 unmountOnExit
             >
                 <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-end">
-                    <div className={'bg-[#504e4a] w-full h-[580px] rounded-t-2xl relative'}>
-                        <button className="h-20 w-20 absolute top-4 right-4" onClick={closeWindow}>
+                    <div className="bg-[#504e4a] w-full h-[580px] rounded-t-2xl relative flex justify-center">
+                        <div className="h-[268px] w-[268px] mt-10">
+                            <img className='rounded-sm' src={props.post.img} alt="Картина песни" />
+                        </div>
+                        <button className="h-20 w-20 absolute " onClick={closeWindow}>
                             <img className="" src="" alt="Назад" />
                         </button>
                     </div>
@@ -82,7 +84,7 @@ const MusicList = (props) => {
                         <img className='' src={props.post.img} alt="Картина песни" />
                     </div>
                     <div className="ml-[26px] flex flex-col mt-3">
-                        <div className="pb-0 text-[22px] font-slim text-gray-950">
+                        <div className="pb-0 text-[22px] font-slim text-gray-800">
                             {props.post.title}
                         </div>
                         <div className="text-[12px] text-gray-700 font-light">
@@ -94,7 +96,9 @@ const MusicList = (props) => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                         </svg>
                     </div>
-                    <button onClick={closeSmallWindow} className="">Закрыть</button>
+                    <button onClick={closeSmallWindow} className="">
+                        <img src="" alt="" />
+                    </button>
                 </div>
             </CSSTransition>
 

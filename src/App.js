@@ -4,13 +4,13 @@ import Header from './components/main/Header'
 import MusicList from './components/MusicList'
 import Search from './components/Search'
 import './index.css'
-import musicLogo from '../src/templates/icons/image.png'
+import Juzz from '../src/templates/icons/Juzz.jpeg'
 import Dom50Logo from '../src/templates/icons/Дом 50.jpeg'
 
 function App() {
 	const [musics, setMusicList] = useState([
 		{
-			img: musicLogo,
+			img: Juzz,
 			title: 'Sheker',
 			authorName: 'TBRN',
 			liked: false,
@@ -22,7 +22,7 @@ function App() {
 			liked: true,
 		},
 		{
-			img: musicLogo,
+			img: Juzz,
 			title: 'Uide',
 			authorName: 'TBRN',
 			liked: true,
