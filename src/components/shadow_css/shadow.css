@@ -1,3 +1,11 @@
 .custom-shadow {
-	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+	filter: drop-shadow(0px 5px 3px rgb(0, 0, 0));
+	max-width: 100%;
+	height: auto;
+}
+
+.custom-fire-shadow {
+	filter: drop-shadow(0px 4px 3px rgb(203, 84, 29));
+	max-width: 100%;
+	height: auto;
 }
