@@ -15,7 +15,7 @@
 .modal-exit-active {
 	transform: translateY(100%);
 	opacity: 0;
-	transition: transform 300ms, opacity 700ms;
+	transition: transform 500ms, opacity 700ms;
 }
 
 .small-modal-enter {
