@@ -1,5 +1,7 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
+import '../shadow_css/shadow.css'
+
 
 const SmallWindow = ({ props, isOpenSmallWindow, closeSmallWindow, checkLike }) => {
 
@@ -10,7 +12,7 @@ const SmallWindow = ({ props, isOpenSmallWindow, closeSmallWindow, checkLike }) 
             classNames="small-modal"
             unmountOnExit
         >
-            <div className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap shadow-2xl">
+            <div className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap border-0 border-b-2 border-stone-600">
                 <div className="h-[75px] w-[75px]">
                     <img className='' src={props.post.img} alt="Картина песни" />
                 </div>
