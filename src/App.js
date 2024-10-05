@@ -9,7 +9,7 @@ import Juzz from '../src/templates/icons/Juzz.jpeg'
 import Dom50Logo from '../src/templates/icons/Дом 50.jpeg'
 
 function App() {
-	const [musics, setMusicList] = useState([
+	const [musics] = useState([
 		{
 			id: 1,
 			img: Juzz,
@@ -37,7 +37,7 @@ function App() {
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#999999]'>
 			<div className='flex-grow'>
 				<Header />
-				<Search />
+				<Search musics={musics} />
 				<Tanymal />
 
 				{musics.map(post => (
