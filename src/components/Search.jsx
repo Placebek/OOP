@@ -40,9 +40,10 @@ const Search = ({ musics }) => {
                     className='bg-[#FFFFFFAB;] rounded-full pl-5 ml-[17px] h-[38px] mt-[15px] w-[300px] focus:outline-none placeholder:text-gray-600 placeholder:font-semibold
                     hover:translate-x-12 hover:w-[330px] transition-all duration-500 '
                 />
-                <div className={isOpenSearchBar ? 'w-0 h-0' : 'float-right pb-10 mr-[16px] mt-[15px]'}>
+                <div className={isOpenSearchBar ? 'hidden' : 'float-right pb-10 mr-[16px] mt-[15px]'}>
                     <img className='w-10 h-10 rounded-full' src={Icon} alt="тут картинка" />
                 </div>
+                <SearchModal isOpen={isOpenSearchBar} doSearh={doSearh} musics={musics} />
             </div>
             <div className='ml-5 float-left absolute mt-[20px]'>
                 {isOpenSearchBar ? (<button onClick={closeSearch}>

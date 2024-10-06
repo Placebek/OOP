@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './ModalAnimations.css';
 import MusicModalWindow from "./modals/MusicModalWindow";
 import SmallWindow from "./modals/MusicSmallModalWindow";
+import MusicItems from "./UI/button/MusicItems";
 
 const MusicList = (props) => {
     const [isOpen, setCheckOpen] = useState(false);
@@ -28,22 +29,7 @@ const MusicList = (props) => {
 
     return (
         <div className="mt-1 pt-0.5 ml-3 flex flex-nowrap border-0 border-t-2 border-stone-400/50">
-            <button
-                onClick={openWindow}
-                className="flex flex-nowrap w-full">
-                <div className="h-[50px] w-[50px]">
-                    <img className='rounded-lg' src={props.post.img} alt="Картина песни" />
-                </div>
-                <div className="ml-[26px] flex flex-col">
-                    <div className="pb-0 h-[20px] font-medium text-gray-950">
-                        {props.post.title}
-                    </div>
-                    <div className="h-[20px] text-gray-700">
-                        {props.post.authorName}
-                    </div>
-                </div>
-            </button>
-
+            <MusicItems openWindow={openWindow} props={props} />
             <div className="ml-auto mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={checkLike} className="size-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
