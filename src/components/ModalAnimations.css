@@ -17,6 +17,7 @@
 	transition: transform 500ms, opacity 700ms;
 }
 
+/* Анимация для маленького окна */
 .small-modal-enter {
 	transform: translateY(100%);
 	opacity: 0;
@@ -36,22 +37,22 @@
 	transition: transform 500ms, opacity 500ms;
 }
 
-/* Анимация для большого окна */
+/* Анимация для поискового окна */
 .search-enter {
-	transform: translateY(100%);
+	transform: translateX(-100%);
 	opacity: 0;
 }
 .search-enter-active {
-	transform: translateY(0);
+	transform: translateX(0);
 	opacity: 1;
 	transition: transform 200ms, opacity 500ms;
 }
 .search-exit {
-	transform: translateY(0);
+	transform: translateX(0);
 	opacity: 1;
 }
 .search-exit-active {
-	transform: translateY(100%);
+	transform: translateX(-100%);
 	opacity: 0;
-	transition: transform 500ms, opacity 700ms;
+	transition: transform 500ms, opacity 500ms;
 }

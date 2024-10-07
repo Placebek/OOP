@@ -18,7 +18,7 @@ const Tanymal = () => {
                         <button onClick={() => changeActive('siz_ushin')}>Siz úshin🔥</button>
                     </li>
                     <li className={`ml-4 border-b-[3px] transition-all duration-700 ${activeButton === 'random' ? 'border-b-green-400' : 'border-b-transparent'}`}>
-                        <button onClick={() => changeActive('random')}>Kezdeysok ander</button>
+                        <button onClick={() => changeActive('random')}>Kezdeısoq ánder</button>
                     </li>
                 </ul>
             </div>

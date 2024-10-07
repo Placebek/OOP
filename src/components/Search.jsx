@@ -37,8 +37,7 @@ const Search = ({ musics }) => {
                     value={searchQuery}
                     placeholder='Izdeu..'
                     type="text"
-                    className='bg-[#FFFFFFAB;] rounded-full pl-5 ml-[17px] h-[38px] mt-[15px] w-[300px] focus:outline-none placeholder:text-gray-600 placeholder:font-semibold
-                    hover:translate-x-12 hover:w-[330px] transition-all duration-500 '
+                    className={isOpenSearchBar ? 'bg-[#FFFFFFAB;] rounded-full pl-5 ml-[17px] h-[38px] mt-[15px] focus:outline-none placeholder:text-gray-600 placeholder:font-semibold translate-x-12 w-[300px] sm:w-[330px] transition-all duration-500' : 'bg-[#FFFFFFAB;] rounded-full pl-5 ml-[17px] h-[38px] mt-[15px] w-[300px]  focus:outline-none placeholder:text-gray-600 placeholder:font-semibold transition-all duration-500'}
                 />
                 <div className={isOpenSearchBar ? 'hidden' : 'float-right pb-10 mr-[16px] mt-[15px]'}>
                     <img className='w-10 h-10 rounded-full' src={Icon} alt="тут картинка" />
@@ -51,7 +50,7 @@ const Search = ({ musics }) => {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                     </svg>
                 </button>) : ''}
-
+                <div className={isOpenSearchBar ? 'fixed inset-0 h-[500px] mt-[350px]' : 'hidden'} onClick={closeSearch}></div>
             </div>
 
         </div >
