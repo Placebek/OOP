@@ -29,7 +29,7 @@ const Search = ({ musics }) => {
         <div className='flex pt-2 '>
             <div className={isOpenSearchBar === false
                 ? 'relative h-[69px] w-full rounded-3xl bg-[#393442] shadow-2xl transition-all duration-300'
-                : 'absolute h-[300px] w-full rounded-3xl bg-[#423834] shadow-2xl transition-all duration-300'}>
+                : 'absolute h-[300px] w-full rounded-3xl bg-[#393442] shadow-2xl transition-all duration-300'}>
 
                 <input
                     onChange={(e) => setSearchQuery(e.target.value)}
