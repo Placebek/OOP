@@ -16,7 +16,7 @@ const SearchModal = ({ isOpen, doSearh, musics }) => {
                     <div>
                         <h1 className="ml-3 mt-2 text-gray-300 font-semibold/50">Sońǵy suranystar:</h1>
                         <ul className="mt-3">{doSearh.map((musics) => (
-                            <li className="ml-3 mt-1 border-0 border-t-2 pt-1"><MusicItems props={musics} /></li>
+                            <li className="ml-3 mt-1 border-0 border-t-2 pt-1"><MusicItems props={musics} key={musics.id} /></li>
                         ))}</ul>
                     </div>
                 </div>

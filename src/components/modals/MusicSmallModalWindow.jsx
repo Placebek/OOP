@@ -4,7 +4,6 @@ import '../shadow_css/shadow.css'
 
 
 const SmallWindow = ({ props, isOpenSmallWindow, closeSmallWindow, checkLike }) => {
-
     return (
         <CSSTransition
             in={isOpenSmallWindow}
@@ -14,14 +13,14 @@ const SmallWindow = ({ props, isOpenSmallWindow, closeSmallWindow, checkLike }) 
         >
             <div className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap border-0 custom-small-window-shadow">
                 <div className="h-[75px] w-[75px]">
-                    <img className='' src={props.post.img} alt="Картина песни" />
+                    <img className='' src={props.img} alt="Картина песни" />
                 </div>
                 <div className="ml-[26px] flex flex-col mt-3">
                     <div className="pb-0 text-[22px] font-slim text-gray-800">
-                        {props.post.title}
+                        {props.title}
                     </div>
                     <div className="text-[12px] text-gray-700 font-light">
-                        {props.post.authorName}
+                        {props.authorName}
                     </div>
                 </div>
                 <div className="ml-auto mr-6 mt-4">
