@@ -44,11 +44,8 @@ const windowSlice = createSlice({
         changeSmallWindow(state, action) {
             state.currentSong = action.payload;
         },
-        loadMusicData(state, action) {
-            state.windowData = action.payload;
-        },
     },
 });
 
-export const { openLargeWindow, closeLargeOpenSmallWindow, changeSmallWindow, loadMusicData } = windowSlice.actions;
+export const { openLargeWindow, closeLargeOpenSmallWindow, changeSmallWindow } = windowSlice.actions;
 export default windowSlice.reducer;

@@ -1,10 +1,10 @@
 import React from "react";
 
-const MusicItems = ({ openWindow, props }) => {
+const MusicItems = ({ props }) => {
     return (
         <button
-            onClick={openWindow}
-            className="flex flex-nowrap w-full">
+            className="flex flex-nowrap w-full"
+            key={props.id}>
             <div className="h-[50px] w-[50px]">
                 <img className='rounded-lg' src={props.img} alt="Картина песни" />
             </div>
