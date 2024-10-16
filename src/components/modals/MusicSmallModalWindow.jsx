@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import '../shadow_css/shadow.css'
 
 
-const SmallWindow = ({ props, isOpenSmallWindow, closeSmallWindow, checkLike }) => {
+const SmallWindow = ({ musics, isOpenSmallWindow, closeSmallWindow, checkLike }) => {
+    const nodeRef = useRef(null);
     return (
+
         <CSSTransition
             in={isOpenSmallWindow}
             timeout={500}
             classNames="small-modal"
             unmountOnExit
+            nodeRef={nodeRef}
         >
-            <div className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap border-0 custom-small-window-shadow">
+            <div ref={nodeRef} className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap border-0 custom-small-window-shadow">
                 <div className="h-[75px] w-[75px]">
-                    <img className='' src={props.img} alt="Картина песни" />
+                    <img className='' src={musics.img} alt="Картина песни" />
                 </div>
                 <div className="ml-[26px] flex flex-col mt-3">
                     <div className="pb-0 text-[22px] font-slim text-gray-800">
-                        {props.title}
+                        {musics.title}
                     </div>
                     <div className="text-[12px] text-gray-700 font-light">
-                        {props.authorName}
+                        {musics.authorName}
                     </div>
                 </div>
                 <div className="ml-auto mr-6 mt-4">

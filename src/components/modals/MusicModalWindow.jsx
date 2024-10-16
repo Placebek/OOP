@@ -1,15 +1,17 @@
-import React from "react"
+import React, { useRef } from "react"
 import { CSSTransition } from "react-transition-group";
 
 const MusicModalWindow = ({ props, isOpen, isOpenSmallWindow, closeWindow }) => {
+    const nodeRef = useRef(null)
     return (
         <CSSTransition
             in={isOpen && !isOpenSmallWindow}
             timeout={300}
             classNames="modal"
             unmountOnExit
+            nodeRef={nodeRef}
         >
-            <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-end">
+            <div ref={nodeRef} className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-end">
                 <div className="bg-[#504e4a] w-full h-[580px] rounded-t-2xl relative flex justify-center">
                     <button className="h-10 w-10 absolute left-1 ml-4 mt-5" onClick={closeWindow}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" className="bi bi-chevron-down" viewBox="0 0 16 16">

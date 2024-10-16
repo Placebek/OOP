@@ -1,21 +1,26 @@
 import React, { useMemo, useState } from 'react'
 import Icon from '../templates/icons/Асхаб.png'
 import SearchModal from './modals/SearchModal';
+import { useSelector } from 'react-redux';
 
-const Search = ({ musics }) => {
+
+const Search = () => {
+
+    const { windowData } = useSelector(state => state.window) || {};
+
     const [searchQuery, setSearchQuery] = useState('')
     const [isOpenSearchBar, setCheckOpenSearchBar] = useState(false);
 
     const doSearh = useMemo(() => {
         if (!searchQuery) {
-            return musics
+            return windowData
         }
 
-        return musics.filter((musics) =>
+        return windowData.filter((musics) =>
             musics.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             musics.authorName.toLowerCase().includes(searchQuery.toLowerCase())
         )
-    }, [musics, searchQuery])
+    }, [windowData, searchQuery])
 
 
     const openSearch = () => {
@@ -42,12 +47,12 @@ const Search = ({ musics }) => {
                 <div className={isOpenSearchBar ? 'hidden' : 'float-right pb-10 mr-[16px] mt-[15px]'}>
                     <img className='w-10 h-10 rounded-full' src={Icon} alt="тут картинка" />
                 </div>
-                <SearchModal isOpen={isOpenSearchBar} doSearh={doSearh} musics={musics} />
+                <SearchModal isOpen={isOpenSearchBar} doSearh={doSearh} />
             </div>
             <div className='ml-5 float-left absolute mt-[20px]'>
                 {isOpenSearchBar ? (<button onClick={closeSearch}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke={!isOpenSearchBar ? "#393442" : "white"} className="size-7">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke={!isOpenSearchBar ? "#393442" : "white"} className="size-7">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                     </svg>
                 </button>) : ''}
                 <div className={isOpenSearchBar ? 'fixed inset-0 h-[500px] mt-[350px]' : 'hidden'} onClick={closeSearch}></div>
