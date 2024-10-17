@@ -1,27 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import './ModalAnimations.css';
 import MusicModalWindow from "./modals/MusicModalWindow";
 import SmallWindow from "./modals/MusicSmallModalWindow";
 import MusicItems from "./UI/button/MusicItems";
 import { useDispatch, useSelector } from 'react-redux';
-import { closeLargeOpenSmallWindow, openLargeWindow, changeSmallWindow } from '../store/slices/windowSlice';
+import { closeLargeOpenSmallWindow, openLargeWindow, changeSmallWindow, closeSmallWindow } from '../store/slices/windowSlice';
 
 const MusicList = () => {
     const dispatch = useDispatch();
     const windowState = useSelector(state => state.window);
-    const { windowData, isLargeWindowOpen, isSmallWindowOpen } = windowState || {};
-    const [selectedMusic, setSelectedMusic] = useState(null); // новое состояние для выбранной музыки
+    const { windowData, isLargeWindowOpen, isSmallWindowOpen, selectedMusic } = windowState || {};
 
     const handleSelectMusic = (music) => {
-        setSelectedMusic(music); // устанавливаем выбранную музыку
-        dispatch(changeSmallWindow(music));
         dispatch(openLargeWindow());
-        console.log(music)
+        dispatch(changeSmallWindow(music));
+        console.log(selectedMusic)
     };
+
 
     const LargeWindowClose = () => {
         dispatch(closeLargeOpenSmallWindow());
     };
+    const LargeWindowOpen = () => {
+        dispatch(closeSmallWindow())
+        dispatch(openLargeWindow());
+    }
 
     return (
         <>
@@ -42,7 +45,6 @@ const MusicList = () => {
                     </div>
                 );
             })}
-            {/* Теперь модальные окна открываются только один раз с выбранной музыкой */}
             {selectedMusic && (
                 <>
                     <MusicModalWindow
@@ -54,7 +56,8 @@ const MusicList = () => {
                     <SmallWindow
                         musics={selectedMusic}
                         isOpenSmallWindow={isSmallWindowOpen}
-                        closeSmallWindow={LargeWindowClose}
+                        openWindow={LargeWindowOpen}
+
                     />
                 </>
             )}

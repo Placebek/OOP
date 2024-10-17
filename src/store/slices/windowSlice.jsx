@@ -25,7 +25,7 @@ const initialState = {
             liked: true,
             img: `${Juzz}`
         }],
-    currentSong: null,
+    selectedMusic: null,
     isLargeWindowOpen: false,
     isSmallWindowOpen: false,
 };
@@ -41,11 +41,14 @@ const windowSlice = createSlice({
             state.isLargeWindowOpen = false;
             state.isSmallWindowOpen = true;
         },
-        changeSmallWindow(state, action) {
-            state.currentSong = action.payload;
+        changeSmallWindow(state, props) {
+            state.selectedMusic = props.payload;
         },
+        closeSmallWindow(state) {
+            state.isSmallWindowOpen = false
+        }
     },
 });
 
-export const { openLargeWindow, closeLargeOpenSmallWindow, changeSmallWindow } = windowSlice.actions;
+export const { openLargeWindow, closeLargeOpenSmallWindow, changeSmallWindow, closeSmallWindow } = windowSlice.actions;
 export default windowSlice.reducer;

@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import '../shadow_css/shadow.css'
 
 
-const SmallWindow = ({ musics, isOpenSmallWindow, closeSmallWindow, checkLike }) => {
+const SmallWindow = ({ musics, isOpenSmallWindow, closeSmallWindow, checkLike, openWindow }) => {
     const nodeRef = useRef(null);
     return (
 
@@ -14,7 +14,7 @@ const SmallWindow = ({ musics, isOpenSmallWindow, closeSmallWindow, checkLike })
             unmountOnExit
             nodeRef={nodeRef}
         >
-            <div ref={nodeRef} className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap border-0 custom-small-window-shadow">
+            <div ref={nodeRef} onClick={openWindow} className="fixed bottom-0 left-0 right-0 bg-[#ffffff] h-[75px] mb-[75px] flex flex-nowrap border-0 custom-small-window-shadow">
                 <div className="h-[75px] w-[75px]">
                     <img className='' src={musics.img} alt="Картина песни" />
                 </div>
