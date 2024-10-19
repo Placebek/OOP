@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { CSSTransition } from "react-transition-group";
+import Mp3Player from "../UI/button/Mp3Player";
 
 const MusicModalWindow = ({ props, isOpen, isOpenSmallWindow, closeWindow }) => {
     const nodeRef = useRef(null)
@@ -25,6 +26,9 @@ const MusicModalWindow = ({ props, isOpen, isOpenSmallWindow, closeWindow }) => 
                     </div>
 
 
+                </div>
+                <div className="absolute mb-[80px]">
+                    <Mp3Player musics={props} />
                 </div>
             </div>
         </CSSTransition>

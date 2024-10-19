@@ -1,0 +1,28 @@
+.audio-player-custom {
+	background-color: #393442 !important;
+	border-radius: 16px !important;
+	color: white !important;
+}
+
+.rhap_progress-bar {
+	background-color: #4ade80 !important;
+}
+
+.rhap_time,
+.rhap_volume-button,
+.rhap_main-controls-button {
+	color: white !important;
+}
+
+.rhap_container {
+	background-color: transparent !important;
+}
+
+.rhap_pause {
+	width: 20px;
+}
+
+.custom-button {
+	width: 70px;
+	height: 70px;
+}
