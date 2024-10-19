@@ -1,0 +1,58 @@
+.modal-enter {
+	transform: translateY(100%);
+	opacity: 0;
+}
+.modal-enter-active {
+	transform: translateY(0);
+	opacity: 1;
+	transition: transform 200ms, opacity 500ms;
+}
+.modal-exit {
+	transform: translateY(0);
+	opacity: 1;
+}
+.modal-exit-active {
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 500ms, opacity 700ms;
+}
+
+/* Анимация для маленького окна */
+.small-modal-enter {
+	transform: translateY(100%);
+	opacity: 0;
+}
+.small-modal-enter-active {
+	transform: translateY(0);
+	opacity: 1;
+	transition: transform 100ms, opacity 500ms;
+}
+.small-modal-exit {
+	transform: translateY(0);
+	opacity: 1;
+}
+.small-modal-exit-active {
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 500ms, opacity 500ms;
+}
+
+/* Анимация для поискового окна */
+.search-enter {
+	transform: translateX(-100%);
+	opacity: 0;
+}
+.search-enter-active {
+	transform: translateX(0);
+	opacity: 1;
+	transition: transform 200ms, opacity 500ms;
+}
+.search-exit {
+	transform: translateX(0);
+	opacity: 1;
+}
+.search-exit-active {
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: transform 500ms, opacity 500ms;
+}
