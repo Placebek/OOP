@@ -1,11 +1,16 @@
-.audio-player-custom {
-	background-color: #393442 !important;
+.audio-large-window {
+	background-color: #504e4a !important;
 	border-radius: 16px !important;
 	color: white !important;
+	position: fixed;
+	margin-top: 350px;
+	border: none !important;
+	box-shadow: none !important;
 }
 
-.rhap_progress-bar {
+.rhap_progress_bar {
 	background-color: #4ade80 !important;
+	margin-bottom: 50px;
 }
 
 .rhap_time,
@@ -16,13 +21,4 @@
 
 .rhap_container {
 	background-color: transparent !important;
-}
-
-.rhap_pause {
-	width: 20px;
-}
-
-.custom-button {
-	width: 70px;
-	height: 70px;
 }

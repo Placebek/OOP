@@ -27,9 +27,9 @@ const MusicModalWindow = ({ props, isOpen, isOpenSmallWindow, closeWindow }) => 
 
 
                 </div>
-                <div className="absolute mb-[80px]">
+                {/* <div className="absolute mb-[80px]">
                     <Mp3Player musics={props} />
-                </div>
+                </div> */}
             </div>
         </CSSTransition>
     );

@@ -33,9 +33,9 @@ const SmallWindow = ({ musics, isOpenSmallWindow, checkLike, openWindow }) => {
                     </svg>
 
                 </div>
-                <div className="hidden">
+                {/* <div className="hidden">
                     <Mp3Player />
-                </div>
+                </div> */}
             </div>
         </CSSTransition>
 

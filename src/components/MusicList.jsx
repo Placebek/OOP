@@ -5,6 +5,7 @@ import SmallWindow from "./modals/MusicSmallModalWindow";
 import MusicItems from "./UI/button/MusicItems";
 import { useDispatch, useSelector } from 'react-redux';
 import { closeLargeOpenSmallWindow, openLargeWindow, changeSmallWindow, closeSmallWindow } from '../store/slices/windowSlice';
+import MP3Player from "./UI/button/Mp3Player";
 
 const MusicList = () => {
     const dispatch = useDispatch();
@@ -59,6 +60,7 @@ const MusicList = () => {
                         openWindow={LargeWindowOpen}
 
                     />
+                    <MP3Player isOpenSmallWindow={isSmallWindowOpen} isOpenLargeWindow={isLargeWindowOpen} />
                 </>
             )}
         </>
