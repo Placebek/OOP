@@ -4,6 +4,8 @@ import Header from './components/main/Header'
 import MusicList from './components/MusicList'
 import Menu from './components/main/Menu'
 import './index.css'
+import './styles.css'
+
 import Search from './components/Search'
 
 function App() {
@@ -14,8 +16,8 @@ function App() {
 				<Search />
 				<Tanymal />
 				<MusicList />
+				<Menu />
 			</div>
-			<Menu />
 		</div>
 	)
 }

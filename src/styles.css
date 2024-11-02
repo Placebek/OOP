@@ -1,0 +1,19 @@
+.active-progress {
+	-webkit-appearance: none;
+	background-color: #737373;
+	height: 5px;
+}
+.large-progress {
+	-webkit-appearance: none;
+	background-color: #737373;
+	height: 4px;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 17px;
+	width: 17px;
+	background: #ababab;
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+}
