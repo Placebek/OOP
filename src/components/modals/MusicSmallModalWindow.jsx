@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import '../shadow_css/shadow.css'
-import Mp3Player from "../UI/button/Mp3Player";
 
 
 const SmallWindow = ({ musics, isOpenSmallWindow, checkLike, openWindow }) => {
