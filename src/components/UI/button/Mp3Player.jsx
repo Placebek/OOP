@@ -11,6 +11,8 @@ const MP3Player = ({ isOpenSmallWindow }) => {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
 
+    const { musicdata } = useSelector(state => state.window);
+
     useEffect(() => {
         const audio = audioRef.current;
         audio.pause();
@@ -60,18 +62,18 @@ const MP3Player = ({ isOpenSmallWindow }) => {
                 type="range"
                 min="0"
                 max="100"
-                value={progress}
+                value={isNaN(progress) ? 0 : progress}
                 onChange={handleProgressChange}
                 className={`fixed bottom-0 ${isOpenSmallWindow ? 'active-progress w-full custom-progress-shadow mb-[109px]' : 'mb-[150px] left-1/2 transform -translate-x-1/2 w-[350px] large-progress'}`}
             />
-            <div className={`${isOpenSmallWindow ? 'hidden' : 'fixed bottom-5 left-1/2 transform -translate-x-1/2 flex gap-[290px]'}`}>
+            <div className={`${isOpenSmallWindow ? 'hidden' : 'fixed bottom-5 left-1/2 transform -translate-x-1/2 flex gap-[290px]'} md:flex md:gap-4`}>
                 <div className='mb-[100px]'>{formatTime(currentTime)}</div>
                 <div className='mb-[100px]'>{formatTime(duration)}</div>
             </div>
 
             <div className="control-buttons">
                 {/* Кнопка предыдущего трека */}
-                <button className={`${isOpenSmallWindow ? 'hidden' : 'fixed bottom-[80px] ml-[110px]'}`}>
+                <button className={`${isOpenSmallWindow ? 'hidden' : 'fixed bottom-[80px] ml-[110px]'} md:bottom-[90px] md:ml-4`}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 20L9 12L19 4L19 20Z" fill="#939393" stroke="#939393" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M5 19L5 5" stroke="#939393" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -79,7 +81,7 @@ const MP3Player = ({ isOpenSmallWindow }) => {
                 </button>
 
                 {/* Кнопка воспроизведения/паузы */}
-                <button onClick={playPause} className={`${isOpenSmallWindow ? 'fixed bottom-14 right-2' : 'fixed bottom-16 left-1/2 transform -translate-x-1/2'}`}>
+                <button onClick={playPause} className={`${isOpenSmallWindow ? 'fixed bottom-[58px] right-3' : 'fixed bottom-16 left-1/2 transform -translate-x-1/2'} md:bottom-20`}>
                     {isPlaying ? (
                         <svg
                             width={isOpenSmallWindow ? "40" : "60"}
@@ -94,7 +96,7 @@ const MP3Player = ({ isOpenSmallWindow }) => {
                                 strokeWidth={isOpenSmallWindow ? "9" : "7"}
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                d="M46 25v25M29 25v25"
+                                d={isOpenSmallWindow ? "M42 10v40 M18 10v40" : "M46 25v25M29 25v25"}
                             />
                         </svg>
                     ) : (
@@ -112,16 +114,14 @@ const MP3Player = ({ isOpenSmallWindow }) => {
                                 strokeLinecap="round"
                                 strokeWidth={isOpenSmallWindow ? "9" : "8"}
                                 strokeLinejoin="round"
-                                d="M27 14 L27 60 L60 37 Z"
+                                d={isOpenSmallWindow ? "M20 10 L20 55 L55 34Z" : "M30 25 L30 50 L50 37Z"}
                             />
-
                         </svg>
                     )}
                 </button>
 
-
                 {/* Кнопка следующего трека */}
-                <button className={`${isOpenSmallWindow ? 'hidden' : 'fixed bottom-[80px] right-0 mr-[110px]'}`}>
+                <button className={`${isOpenSmallWindow ? 'hidden' : 'fixed bottom-[80px] right-0 mr-[110px]'} md:bottom-[90px] md:mr-4`}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 4L15 12L5 20V4Z" fill="#939393" stroke="#939393" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M19 5V19" stroke="#939393" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -130,6 +130,7 @@ const MP3Player = ({ isOpenSmallWindow }) => {
             </div>
         </div>
     );
+
 };
 
 export default MP3Player;

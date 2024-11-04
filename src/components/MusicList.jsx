@@ -58,7 +58,6 @@ const MusicList = () => {
                         musics={selectedMusic}
                         isOpenSmallWindow={isSmallWindowOpen}
                         openWindow={LargeWindowOpen}
-
                     />
                     <MP3Player isOpenSmallWindow={isSmallWindowOpen} isOpenLargeWindow={isLargeWindowOpen} />
                 </>
