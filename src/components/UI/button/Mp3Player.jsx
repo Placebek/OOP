@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import 'react-h5-audio-player/lib/styles.css';
 import '../../shadow_css/shadow.css';
-import { setMusic, changeSmallWindow } from '../../../store/slices/windowSlice';
+import { changeSmallWindow } from '../../../store/slices/windowSlice';
 
 const MP3Player = ({ isOpenSmallWindow }) => {
     const { selectedMusic, windowData } = useSelector(state => state.window);
@@ -19,23 +19,34 @@ const MP3Player = ({ isOpenSmallWindow }) => {
         const audio = audioRef.current;
         audio.pause();
         audio.src = selectedMusic.music;
-        audio.play();
 
+        const playAudio = async () => {
+            try {
+                await audio.play();
+                setIsPlaying(true);
+            } catch (error) {
+                console.error("Ошибка при воспроизведении аудио:", error);
+            }
+        };
+        playAudio();
         const updateDuration = () => setDuration(audio.duration);
         const handleTimeUpdate = () => {
             setCurrentTime(audio.currentTime);
             setProgress((audio.currentTime / audio.duration) * 100);
         };
+        const handleEnd = () => changeTrack(1);
 
         audio.addEventListener('loadedmetadata', updateDuration);
         audio.addEventListener('timeupdate', handleTimeUpdate);
-
+        audio.addEventListener('ended', handleEnd);
         return () => {
             audio.removeEventListener('loadedmetadata', updateDuration);
             audio.removeEventListener('timeupdate', handleTimeUpdate);
+            audio.removeEventListener('ended', handleEnd);
             audio.pause();
         };
     }, [selectedMusic.music]);
+
 
 
     const handleProgressChange = (e) => {
