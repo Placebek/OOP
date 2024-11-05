@@ -15,7 +15,7 @@ const MusicList = () => {
     const handleSelectMusic = (music) => {
         dispatch(openLargeWindow());
         dispatch(changeSmallWindow(music));
-        console.log(selectedMusic)
+        // console.log(selectedMusic)
     };
 
 
@@ -58,7 +58,6 @@ const MusicList = () => {
                         musics={selectedMusic}
                         isOpenSmallWindow={isSmallWindowOpen}
                         openWindow={LargeWindowOpen}
-
                     />
                     <MP3Player isOpenSmallWindow={isSmallWindowOpen} isOpenLargeWindow={isLargeWindowOpen} />
                 </>

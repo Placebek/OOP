@@ -50,10 +50,12 @@ const windowSlice = createSlice({
         },
         changeSmallWindow(state, props) {
             state.selectedMusic = props.payload;
+            console.log(props.payload)
+
         },
         closeSmallWindow(state) {
             state.isSmallWindowOpen = false
-        }
+        },
     },
 });
 
