@@ -50,12 +50,18 @@ const windowSlice = createSlice({
         },
         changeSmallWindow(state, props) {
             state.selectedMusic = props.payload;
+            console.log(props.payload)
+
         },
         closeSmallWindow(state) {
             state.isSmallWindowOpen = false
+        },
+        setMusic(state, props) {
+            state.selectedMusic = props.payload;
+            // console.log(state)
         }
     },
 });
 
-export const { openLargeWindow, closeLargeOpenSmallWindow, changeSmallWindow, closeSmallWindow } = windowSlice.actions;
+export const { openLargeWindow, closeLargeOpenSmallWindow, changeSmallWindow, closeSmallWindow, setMusic } = windowSlice.actions;
 export default windowSlice.reducer;

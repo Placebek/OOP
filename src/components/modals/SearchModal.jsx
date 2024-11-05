@@ -14,7 +14,7 @@ const SearchModal = ({ isOpen, doSearh }) => {
             unmountOnExit
             nodeRef={nodeRef}
         >
-            <div ref={nodeRef} className="fixed inset-0 h-[80px] mt-[105px] right-10">
+            <div ref={nodeRef} className="fixed inset-0 h-[80px] mt-[70px] right-10">
                 <div className="">
                     <div>
                         <h1 className="ml-3 mt-2 text-gray-300 font-semibold/50">Sońǵy suranystar:</h1>
