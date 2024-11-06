@@ -1,31 +1,22 @@
 import React from "react";
 import './ModalAnimations.css';
-import MusicModalWindow from "./modals/MusicModalWindow";
-import SmallWindow from "./modals/MusicSmallModalWindow";
 import MusicItems from "./UI/button/MusicItems";
 import { useDispatch, useSelector } from 'react-redux';
-import { closeLargeOpenSmallWindow, openLargeWindow, changeSmallWindow, closeSmallWindow } from '../store/slices/windowSlice';
-import MP3Player from "./UI/button/Mp3Player";
+import { openLargeWindow, changeSmallWindow } from '../store/slices/windowSlice';
+
 
 const MusicList = () => {
     const dispatch = useDispatch();
     const windowState = useSelector(state => state.window);
-    const { windowData, isLargeWindowOpen, isSmallWindowOpen, selectedMusic } = windowState || {};
+    const { windowData } = windowState || {};
 
     const handleSelectMusic = (music) => {
         dispatch(openLargeWindow());
         dispatch(changeSmallWindow(music));
-        // console.log(selectedMusic)
     };
 
 
-    const LargeWindowClose = () => {
-        dispatch(closeLargeOpenSmallWindow());
-    };
-    const LargeWindowOpen = () => {
-        dispatch(closeSmallWindow())
-        dispatch(openLargeWindow());
-    }
+
 
     return (
         <>
@@ -46,22 +37,7 @@ const MusicList = () => {
                     </div>
                 );
             })}
-            {selectedMusic && (
-                <>
-                    <MusicModalWindow
-                        props={selectedMusic}
-                        isOpen={isLargeWindowOpen}
-                        isOpenSmallWindow={isSmallWindowOpen}
-                        closeWindow={LargeWindowClose}
-                    />
-                    <SmallWindow
-                        musics={selectedMusic}
-                        isOpenSmallWindow={isSmallWindowOpen}
-                        openWindow={LargeWindowOpen}
-                    />
-                    <MP3Player isOpenSmallWindow={isSmallWindowOpen} isOpenLargeWindow={isLargeWindowOpen} />
-                </>
-            )}
+
         </>
     );
 };

@@ -45,11 +45,13 @@ const MP3Player = ({ isOpenSmallWindow }) => {
             audio.removeEventListener('ended', handleEnd);
             audio.pause();
         };
+
     }, [selectedMusic.music]);
 
 
 
     const handleProgressChange = (e) => {
+
         const newTime = (e.target.value / 100) * duration;
         audioRef.current.currentTime = newTime;
         setProgress(e.target.value);
@@ -64,7 +66,6 @@ const MP3Player = ({ isOpenSmallWindow }) => {
         }
         setIsPlaying(!isPlaying);
     };
-
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60).toString().padStart(2, '0');
@@ -81,7 +82,6 @@ const MP3Player = ({ isOpenSmallWindow }) => {
         }
         dispatch(changeSmallWindow(windowData[nextTrackIndex - 1]))
         setIsPlaying(true);
-        console.log(nextTrackIndex)
 
     };
 
@@ -91,6 +91,8 @@ const MP3Player = ({ isOpenSmallWindow }) => {
                 type="range"
                 min="0"
                 max="100"
+                step="0.01"
+
                 value={isNaN(progress) ? 0 : progress}
                 onChange={handleProgressChange}
                 className={`fixed bottom-0 ${isOpenSmallWindow ? 'active-progress w-full custom-progress-shadow mb-[109px]' : 'mb-[150px] left-1/2 transform -translate-x-1/2 w-[350px] large-progress'}`}
