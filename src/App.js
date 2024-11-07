@@ -9,6 +9,7 @@ import './styles.css'
 import Search from './components/Search'
 import Greeting from './components/profile/Greeting'
 import ModalWindows from './components/modals/ModalWindows'
+import Playlist from './components/profile/Playlist'
 
 function App() {
 	return (
@@ -28,7 +29,15 @@ function App() {
 							</>
 						}
 					/>
-					<Route path='/profile' element={<Greeting />} />
+					<Route
+						path='/profile'
+						element={
+							<>
+								<Greeting />
+								<Playlist />
+							</>
+						}
+					/>
 				</Routes>
 			</div>
 		</Router>
