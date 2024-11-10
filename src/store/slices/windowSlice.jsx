@@ -13,7 +13,7 @@ const initialState = {
             authorName: 'TBRN',
             liked: false,
             img: `${Juzz}`,
-            music: `${ShekerMusic}`,
+            music: 'https://minty.club/artist/rihanna/the-monster-ft-eminem/rihanna-the-monster-ft-eminem.mp3',
         },
         {
             id: 2,
