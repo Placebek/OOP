@@ -27,7 +27,7 @@ const Menu = () => {
                             </Link>
                         </li>
                         <li className="pt-2 mb-2">
-                            <Link to='/'>
+                            <Link to='/news'>
 
                                 <button onClick={() => changeActive('fire')} className={`${activeMenu === 'fire' ? 'custom-fire-shadow' : 'shadow-none'}`}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill={checkLike} className="bi bi-fire" viewBox="0 0 16 16">

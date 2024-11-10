@@ -19,14 +19,19 @@ const initialState = {
             playlist_name: 'На машине',
             playlist_logo: `${Juzz}`,
         }],
+    isAlbumWindowOpen: false,
+
 };
 
 const playlistSlice = createSlice({
     name: 'playlist',
     initialState,
     reducers: {
-
+        openAlbumWindow(state) {
+            state.isAlbumWindowOpen = true;
+        },
     },
 });
+export const { openAlbumWindow } = playlistSlice.actions;
 
 export default playlistSlice.reducer;
