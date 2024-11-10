@@ -56,3 +56,22 @@
 	opacity: 0;
 	transition: transform 500ms, opacity 500ms;
 }
+
+.news-enter {
+	opacity: 0;
+	transform: translateY(100%);
+}
+.news-enter-active {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 300ms, transform 300ms;
+}
+.news-exit {
+	opacity: 1;
+	transform: translateY(0);
+}
+.news-exit-active {
+	opacity: 0;
+	transform: translateY(100%);
+	transition: opacity 300ms, transform 300ms;
+}

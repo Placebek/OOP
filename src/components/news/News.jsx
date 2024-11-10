@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import NewsItems from './NewsItems'
 import '../shadow_css/shadow.css'
-
+import { Link } from 'react-router-dom';
+import { openNewsWindow } from '../../store/slices/newsSlices'
 
 function News() {
+    const dispatch = useDispatch()
     const { newsData } = useSelector(state => state.news)
     const [isActiveButton, setActiveButton] = useState('alem');
 
@@ -30,7 +32,9 @@ function News() {
                             }}
                             className='h-[120px] mb-2 rounded-lg bg-cover bg-center '
                         >
-                            <NewsItems props={props} />
+                            <Link to={`/news/${props.id}`} onClick={() => dispatch(openNewsWindow())}>
+                                <NewsItems props={props} />
+                            </Link>
                         </div>
 
                     )}

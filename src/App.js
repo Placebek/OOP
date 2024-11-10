@@ -10,6 +10,7 @@ import Playlist from './components/profile/Playlist'
 import News from './components/news/News'
 import './index.css'
 import './styles.css'
+import NewsPage from './components/news/NewsPage'
 
 function App() {
 	const location = useLocation()
@@ -40,6 +41,7 @@ function App() {
 					}
 				/>
 				<Route path='/news' element={<News />} />
+				<Route path='/news/:pk' element={<NewsPage />} />
 			</Routes>
 		</div>
 	)
