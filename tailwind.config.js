@@ -7,7 +7,10 @@ module.exports = {
 				'diagonal-gradient':
 					'linear-gradient(45deg, #4179A8, #020608, #4179A8)',
 			},
+			direction: {
+				rtl: 'rtl',
+			},
 		},
+		plugins: [],
 	},
-	plugins: [],
 }

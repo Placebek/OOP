@@ -14,13 +14,14 @@ import NewsPage from './components/news/NewsPage'
 
 function App() {
 	const location = useLocation()
+	const isNewsPage = location.pathname.startsWith('/news')
 
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#999999]'>
 			<Menu />
 			<ModalWindows />
-			{location.pathname !== '/news' ||
-				(location.pathname !== '/news/:pk' && <Search />)}
+			{/* Показывать компонент Search только на страницах, не относящихся к /news */}
+			{!isNewsPage && <Search />}
 
 			<Routes>
 				<Route
