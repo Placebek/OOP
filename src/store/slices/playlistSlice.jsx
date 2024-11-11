@@ -19,6 +19,7 @@ const initialState = {
             playlist_name: 'На машине',
             playlist_logo: `${Juzz}`,
         }],
+
     isAlbumWindowOpen: false,
 
 };

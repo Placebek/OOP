@@ -19,7 +19,8 @@ function App() {
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#999999]'>
 			<Menu />
 			<ModalWindows />
-			{location.pathname !== '/news' && <Search />}
+			{location.pathname !== '/news' ||
+				(location.pathname !== '/news/:pk' && <Search />)}
 
 			<Routes>
 				<Route
